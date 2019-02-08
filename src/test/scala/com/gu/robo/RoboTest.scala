@@ -35,6 +35,11 @@ class RoboTest extends FreeSpec with Matchers with OptionValues {
       robo_0_0.move(E).position shouldBe robo_0_0.position
     }
 
+    "make multiple movements" in {
+      val robo = Robo(Position(10, 10))
+      robo.move(List(N, E, N, E, N, E, N, E, N, E)).position shouldBe Position(5, 5)
+    }
+
   }
 
 }
